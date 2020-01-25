@@ -1,0 +1,5 @@
+HAL_I2C_Mem_Read(&hi2c1, MPU_ADDR, WHO_AM_I, I2C_MEMADD_SIZE_8BIT, &Data, 2 ,10 ); //читаем регистр WHO_AM_I устройства MPU_ADDR
+HAL_UART_Transmit(&huart1, &Data , 1, 10); //Выводим значение регистра
+CR = 0x0A;  //новая строка
+HAL_UART_Transmit(&huart1, &CR, 1, 10);
+HAL_Delay(1000);
